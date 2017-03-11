@@ -1,8 +1,7 @@
 
-import subprocess
-import tempfile
 import argparse
 
+import klick
 
 
 parser = argparse.ArgumentParser(description='run klick with accelerating tempo')
@@ -28,8 +27,5 @@ meas = args.meas[0]
 lines = ["{} 8/8 {} Xxxxxxxx\n".format(meas, t) for t in range(startBPM, stopBPM+1, stepBPM)]
 print lines
 
-with tempfile.NamedTemporaryFile() as f:
-    f.writelines(lines)
-    f.flush()
-    subprocess.call(["klick", "-P", "-f", f.name])
 
+klick.runKlick(lines)
