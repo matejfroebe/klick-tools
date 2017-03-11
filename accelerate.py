@@ -5,7 +5,7 @@ import argparse
 
 
 
-parser = argparse.ArgumentParser(description='Process some integers.')
+parser = argparse.ArgumentParser(description='run klick with accelerating tempo')
 parser.add_argument('startBPM', type=int, nargs='+',
                     help='starting BPM')
 parser.add_argument('stopBPM', type=int, nargs='+',
